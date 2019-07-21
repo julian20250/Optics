@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from PIL import Image
 import glob
 
-filenames = glob.glob("originalImages/*.JPG")
+filenames = glob.glob("ResultadosInversos/*.JPG")
 for x in filenames:
     nombre = x[-x[::-1].index("/"):-4]
     #nombre = x[:-4]
@@ -12,7 +12,7 @@ for x in filenames:
     # Open Image
     img = Image.open(x).convert("L")
     # Load image into numpy array
-    img_data = np.asarray(img)**(1/2.)
+    img_data = np.asarray(img)
 
     maximum = np.max(img_data)
     i,j = np.unravel_index(img_data.argmax(), img_data.shape)
@@ -23,4 +23,4 @@ for x in filenames:
 
     f=plt.figure(figsize=(12,12))
     plt.plot(X, I)
-    plt.savefig("Resultados/IntensidadLine/"+nombre+".png")
+    plt.savefig("ResultadosInversos/CorteIntensidad/"+nombre+".png")
