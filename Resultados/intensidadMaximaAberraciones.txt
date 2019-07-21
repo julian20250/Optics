@@ -1,0 +1,4 @@
+defocus.png 689.426212
+abs.png 940.232255
+astigmatism.png 1220.419081
+distortion.png 692.327370
