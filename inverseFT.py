@@ -12,7 +12,7 @@ for x in filenames:
     # Open Image
     img = Image.open(x).convert("L")
     # Load image into numpy array
-    img_data = np.asarray(img)**(1/2.)
+    img_data = np.asarray(img)**.5
     # Perform the 2-D fast fourier transform on the image data
     fourier = np.fft.ifft2(img_data)
     # Move the zero-frequency component to the center of the fourier spectrum
